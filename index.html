@@ -39,13 +39,30 @@
             src: url('/ninna.woff2') format('woff2');
         }
 
+        @font-face {
+            font-family: "DM Mono";
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+            src: url('/dm-mono.woff2')
+        }
+
+        @font-face {
+            font-family: "DM Mono";
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+            src: url('/dm-mono-italic.woff2')
+        }
+
         body {
             font-family: 'Ninna';
             display: grid;
-            place-content: center;
-            place-items: center;
+            justify-items: center;
             min-height: 100vh;
             margin: 0;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
             animation: drift 30s linear infinite;
             color: hsl(0, 0%, 1%);
             background-color: hsl(0, 0%, 96%);
@@ -81,12 +98,12 @@
         }
 
         h1:first-letter {
-            font-feature-settings: 'swsh'on;
+            font-feature-settings: 'swsh';
         }
 
         h1 em {
             font-style: normal;
-            font-feature-settings: 'ss12'on;
+            font-feature-settings: 'ss12';
             color: hsl(0, 0%, 100%);
         }
 
@@ -98,8 +115,40 @@
 
         aside {
             font-size: 4rem;
-            font-feature-settings: 'ss14'on;
+            font-feature-settings: 'ss14';
             color: hsl(0, 0%, 100%);
+        }
+
+        main {
+            margin-top: 10rem;
+        }
+
+        article {
+            max-width: 60ch;
+            padding-inline: 1rem;
+            text-align: justify;
+            margin-bottom: 3rem;
+            font-family: "DM Mono";
+        }
+
+        article:not(:last-child):after {
+            font-size: 3rem;
+            font-feature-settings: 'ss14';
+            content: "&";
+            color: hsl(0, 0%, 100%);
+            display: block;
+            text-align: center;
+            font-family: "Ninna"
+        }
+
+        time {
+            font-size: .75rem;
+            text-transform: lowercase;
+        }
+
+        pre {
+            font-size: .75rem;
+            font-family: inherit;
         }
 
         form {
@@ -164,6 +213,17 @@
     <p>Welcome, traveler. I’m glad you could make it.</p>
     <h1>You may <em>remain</em> just as long as you wish.</h1>
     <aside>&</aside>
+    <main>
+        <article>
+            <time>Wed Apr 27 2022 12:29:36 GMT-0400 (Eastern Daylight Time)</time>
+            <pre>
+born young
+and raised in a small town right on the border between the Wild West and the Internet;
+guts and love and glory in the last two places in America
+where you can truly get lost.
+            </pre>
+        </article>
+    </main>
     <form name="notes" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
         <label>
             <div>leave a kind note, or rare secret.</div>
