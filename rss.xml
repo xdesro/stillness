@@ -1,9 +1,10 @@
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Stillness.Digital | A Place To Rest</title>
 		<description>A website built just for you, which expects nothing of your time. Breathe freely, old friend.</description>
 		<pubDate>Wed, 27 Apr 2022 12:29:36 EDT</pubDate>
 		<link>https://stillness.digital/</link>
+        <atom:link href="https://stillness.digital/rss.xml" rel="self" type="application/rss+xml" />
 		<image>
 			<link>https://stillness.digital/</link>
 			<url>https://stillness.digital/meta/favicon-32x32.png</url>
