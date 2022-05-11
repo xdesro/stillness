@@ -75,6 +75,10 @@
         src: url("/dm-mono-italic.woff2");
       }
 
+      * {
+          box-sizing: border-box;
+      }
+
       body {
         font-family: "Ninna";
         display: grid;
@@ -181,7 +185,6 @@
         top: 0;
         left: 0;
         right: 0;
-        min-height: 100vh;
         height: 100vh;
         overflow: hidden;
         font-family: "DM Mono";
@@ -229,6 +232,7 @@
         position: absolute;
         bottom: 1.5rem;
         right: 1.5rem;
+        z-index: 2;
       }
 
       button:hover,
