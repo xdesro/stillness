@@ -76,7 +76,7 @@
       }
 
       * {
-          box-sizing: border-box;
+        box-sizing: border-box;
       }
 
       body {
@@ -181,24 +181,24 @@
       }
 
       form {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100vh;
-        overflow: hidden;
         font-family: "DM Mono";
         font-size: 1.25rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        height: 100vh;
       }
 
       textarea {
-        padding: 1.5rem;
-        width: 100%;
-        min-height: 10em;
-        height: 100vh;
         font: inherit;
-        outline: none;
+        width: 100%;
+        height: 100vh;
+        min-height: 10em;
+        padding: 1.5rem;
         border: none;
+        outline: none;
       }
 
       label {
@@ -225,14 +225,15 @@
 
       button {
         font: inherit;
+        position: absolute;
+        z-index: 2;
+        right: 1.5rem;
+        bottom: 1.5rem;
         padding: 0.25rem 0.5rem;
         cursor: pointer;
+        color: inherit;
         border: 1px solid currentColor;
         background-color: transparent;
-        position: absolute;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 2;
       }
 
       button:hover,
