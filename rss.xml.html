@@ -1,0 +1,25 @@
+---
+permalink: rss.xml
+---
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Stillness.Digital | A Place To Rest</title>
+		<description>A website built just for you, which expects nothing of your time. Breathe freely, old friend.</description>
+		<pubDate>Wed, 27 Apr 2022 12:29:36 EDT</pubDate>
+		<link>https://stillness.digital/</link>
+        <atom:link href="https://stillness.digital/rss.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<link>https://stillness.digital/</link>
+			<url>https://stillness.digital/meta/favicon-32x32.png</url>
+			<title>Stillness.Digital | A Place To Rest</title>
+		</image>
+        {% for post in collections.posts | reverse %}
+            <item>
+                <title>{{ post.date | jsDate }}</title>
+                <description><![CDATA[{{ post.templateContent | nl2br | safe }}]]></description>
+                <pubDate>{{ post.date.toISOString() }}</pubDate>
+                <guid isPermaLink="false">{{ post.date.toISOString() }}</guid>
+            </item>
+        {% endfor %}
+	</channel>
+</rss>
