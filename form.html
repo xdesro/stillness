@@ -1,29 +1,32 @@
 ---
 layout: base.html
 ---
+
 <main>
-    <form id="form">
-        <textarea name="body"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+  <form id="form">
+    <textarea name="body"></textarea>
+    <button type="submit">Submit</button>
+  </form>
 </main>
 
 <script>
-    const form = document.querySelector('#form');
+  const form = document.querySelector("#form");
 
-    const handleSubmission = e => {
-        e.preventDefault();
+  const handleSubmission = (e) => {
+    e.preventDefault();
 
-        const text = e.target.elements.body.value;
-        const date = new Date();
+    const text = e.target.elements.body.value;
+    const date = new Date();
 
-        const template = `---
+    const template = `---
 date: ${date.toISOString()}
 ---
-${text}`
-        const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(template)}`
-        window.location.href = ghQueryUrl;
-    }
+${text}`;
 
-    form.addEventListener('submit', handleSubmission);
+    const message = `📄 - Create new post: ${date}`;
+    const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(template)}&message=${encodeURIComponent(message)}`;
+    window.location.href = ghQueryUrl;
+  };
+
+  form.addEventListener("submit", handleSubmission);
 </script>
