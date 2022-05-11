@@ -20,7 +20,7 @@ layout: base.html
         const template = `---
 date: ${date.toISOString()}
 ---
-${text}`
+${text.replace(/\n+$/, "")}`
         const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(template)}`
         window.location.href = ghQueryUrl;
     }
