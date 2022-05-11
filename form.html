@@ -13,8 +13,16 @@ layout: base.html
 
     const handleSubmission = e => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        console.log(formData);
+
+        const text = e.target.elements.body.value;
+        const date = new Date();
+
+        const template = `---
+date: ${date.toISOString()}
+---
+${text}`
+        const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(template)}`
+        window.location.href = ghQueryUrl;
     }
 
     form.addEventListener('submit', handleSubmission);
