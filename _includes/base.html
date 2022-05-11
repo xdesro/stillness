@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stillness.Digital | A Place To Rest</title>
+    <meta
+      name="description"
+      content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/meta/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/meta/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/meta/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/meta/site.webmanifest" />
+    <link rel="mask-icon" href="/meta/safari-pinned-tab.svg" color="#030303" />
+    <meta name="msapplication-TileColor" content="#efefef" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="twitter:title" content="Stillness.Digital | A Place To Rest" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@xdesro" />
+    <meta
+      name="twitter:image"
+      content="https://stillness.digital/meta/og.png"
+    />
+    <meta
+      name="twitter:description"
+      content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
+    />
+
+    <meta property="og:title" content="Stillness.Digital | A Place To Rest" />
+    <meta property="og:image" content="https://stillness.digital/meta/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+
+    <style>
+      @font-face {
+        font-family: "Ninna";
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("/ninna.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "DM Mono";
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("/dm-mono.woff2");
+      }
+
+      @font-face {
+        font-family: "DM Mono";
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+        src: url("/dm-mono-italic.woff2");
+      }
+
+      body {
+        font-family: "Ninna";
+        display: grid;
+        justify-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        animation: drift 30s linear infinite;
+        color: hsl(0, 0%, 1%);
+        background-color: hsl(0, 0%, 96%);
+        background-image: url("/gradient.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      @keyframes drift {
+        from {
+          background-position-x: 0;
+        }
+
+        to {
+          background-position-x: 100vw;
+        }
+      }
+
+      ::selection {
+        background-color: hsla(249, 33%, 88%, 40%);
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 9vw, 3.8rem);
+        font-weight: normal;
+        line-height: 1.1;
+        max-width: 18ch;
+        text-align: center;
+        text-transform: uppercase;
+        color: hsl(0, 0%, 1%);
+      }
+
+      h1:first-letter {
+        font-feature-settings: "swsh";
+      }
+
+      h1 em {
+        font-style: normal;
+        font-feature-settings: "ss07", "ss12";
+        color: hsl(0, 0%, 100%);
+      }
+
+      p {
+        max-width: 22ch;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      aside {
+        font-size: 4rem;
+        font-feature-settings: "ss14";
+        color: hsl(0, 0%, 100%);
+      }
+
+      main {
+        margin-top: 5rem;
+      }
+
+      article {
+        font-family: "DM Mono";
+        max-width: 45ch;
+        margin-bottom: 3rem;
+        padding-inline: 1rem;
+        text-align: justify;
+      }
+
+      article:not(:last-child):after {
+        font-family: "Ninna";
+        font-size: 3rem;
+        font-feature-settings: "ss14";
+        display: block;
+        content: "&";
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+      }
+
+      time {
+        font-size: 0.85rem;
+        display: block;
+        text-align: left;
+        text-transform: lowercase;
+      }
+
+      pre {
+        font-family: inherit;
+        font-size: 0.85rem;
+        margin-bottom: 3rem;
+        white-space: pre-line;
+      }
+
+      form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+        font-family: "DM Mono";
+        font-size: 1.25rem;
+      }
+
+      textarea {
+        padding: 1.5rem;
+        width: 100%;
+        min-height: 10em;
+        height: 100vh;
+        font: inherit;
+        outline: none;
+        border: none;
+      }
+
+      label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+
+      label > div {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        font: inherit;
+        border: none;
+        border-bottom: 1px solid currentColor;
+        border-radius: 0;
+        background-color: transparent;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      button {
+        font: inherit;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        border: 1px solid currentColor;
+        background-color: transparent;
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+
+      button:hover,
+      button:active {
+        color: hsl(40, 8%, 71%);
+        border-color: hsl(0, 0%, 1%);
+        background-color: hsl(0, 0%, 1%);
+      }
+
+      .secret {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    {{ content | safe }}
+    <footer class="secret">
+      my, you are certainly curious, eh! what a delight it must be to know you.
+      i feel you are a dear friend to me already.
+    </footer>
+    <script>
+      console.log(
+        "❧ hey. i’m henry (https://henry.codes) — idk why I made this, just wanted to put something nice and quiet out there on the web today.\n\n",
+        "❧ it’s just one html file with like some css and a script tag to print this text.\n\n",
+        "❧ the font is margot lévêque’s ninna. — https://margotleveque.com/collections/ninna\n\n",
+        "❧ stay safe out there."
+      );
+    </script>
+  </body>
+</html>

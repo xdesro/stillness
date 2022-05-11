@@ -1,0 +1,21 @@
+---
+layout: base.html
+---
+<main>
+    <form id="form">
+        <textarea name="body"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+<script>
+    const form = document.querySelector('#form');
+
+    const handleSubmission = e => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData);
+    }
+
+    form.addEventListener('submit', handleSubmission);
+</script>
