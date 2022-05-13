@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stillness.Digital | A Place To Rest</title>
+    <title>Stillness.Digital | {{ title or 'A Place To Rest' }}</title>
     <meta
       name="description"
       content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
@@ -132,6 +132,17 @@
         color: hsl(0, 0%, 100%);
       }
 
+      a {
+        position: relative;
+        color: inherit;
+      }
+      .decorated:before {
+        position: absolute;
+        left: -1.25rem;
+        display: block;
+        content: "✍";
+      }
+
       p {
         max-width: 22ch;
         padding: 1rem;
@@ -150,6 +161,7 @@
 
       article {
         font-family: "DM Mono";
+        font-size: 0.85rem;
         max-width: 45ch;
         margin-bottom: 3rem;
         padding-inline: 1rem;
@@ -169,6 +181,7 @@
       time {
         font-size: 0.85rem;
         display: block;
+        margin-bottom: 2rem;
         text-align: left;
         text-transform: lowercase;
       }
@@ -176,8 +189,21 @@
       pre {
         font-family: inherit;
         font-size: 0.85rem;
-        margin-bottom: 3rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
         white-space: pre-line;
+      }
+      pre ~ a {
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+      pre ~ address {
+        display: inline-block;
+        margin-bottom: 3rem;
+      }
+      pre ~ address:before {
+        padding-right: 1.5ch;
+        content: "❦";
       }
 
       form {

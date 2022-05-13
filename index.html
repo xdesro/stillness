@@ -6,8 +6,10 @@ layout: base.html
 <main>
     {% for post in collections.posts | reverse %}
         <article>
-            <time>{{ post.date }}</time>
+            <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
             <pre>{{ post.templateContent }}</pre>
+            <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
+            {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
         </article>
     {% endfor %}
 </main>

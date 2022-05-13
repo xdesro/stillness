@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/xdesro/stillness#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "geo-tz": "^7.0.2"
   }
 }

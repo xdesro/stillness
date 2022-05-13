@@ -1,4 +1,5 @@
 {
-    "permalink": false,
-    "tags": "posts"
+  "permalink": "/posts/{{ page.date | urlDate | slugify }}/index.html",
+  "tags": "posts",
+  "layout": "post.html"
 }

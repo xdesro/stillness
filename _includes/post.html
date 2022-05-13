@@ -1,0 +1,11 @@
+---
+layout: 'base.html'
+---
+
+<main>
+    <article>
+        <time>{{ page.date | jsDate }}</time>
+        <pre>{{ content | safe }}</pre>
+        <a href="/">← return</a>
+    </article>
+</main>
