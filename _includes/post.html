@@ -4,7 +4,7 @@ layout: 'base.html'
 
 <main>
     <article>
-        <time>{{ page.date | jsDate }}</time>
+        <time>{{ page.date | timezonedDate(page.gps) }}</time>
         <pre>{{ content | safe }}</pre>
         <a href="/">← return</a>
     </article>

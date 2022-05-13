@@ -10,7 +10,6 @@ module.exports = function (eleventyConfig) {
     return new Date(str);
   });
   eleventyConfig.addFilter("timezonedDate", (str, coords) => {
-      console.log(coords);
     const options = {
       weekday: "long",
       year: "numeric",
