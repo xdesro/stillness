@@ -3,6 +3,7 @@ layout: base.html
 ---
 
 <main>
+  <button id="getgeo" style="top: 0;left:0">test</button>
   <form id="form">
     <textarea name="body"></textarea>
     <button type="submit">submit</button>
@@ -11,7 +12,24 @@ layout: base.html
 
 <script>
   const form = document.querySelector("#form");
+  const button = document.querySelector('#getgeo')
+  let currentLocation = null;
 
+  const success = (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    button.textContent = `${latitude} - ${longitude}`;
+    return [latitude, longitude];
+  };
+
+  button.addEventListener("click", (e) => {
+    if (navigator.location) {
+      currentLocation = navigator.geolocation.getCurrentPosition(success);
+    } else {
+      console.log('no nav')
+    }
+  });
   const handleSubmission = (e) => {
     e.preventDefault();
 
@@ -24,7 +42,9 @@ date: ${date.toISOString()}
 ${text}`;
 
     const message = `📄 - Create new post: ${date}`;
-    const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(template)}&message=${encodeURIComponent(message)}`;
+    const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(
+      template
+    )}&message=${encodeURIComponent(message)}`;
     window.location.href = ghQueryUrl;
   };
 
