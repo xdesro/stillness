@@ -20,8 +20,8 @@ layout: base.html
     gps = true;
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    currentLocation =  [latitude, longitude];
-    button.textContent = currentLocation.map(segment => segment.toFixed(4))
+    currentLocation =  [latitude, longitude].map(segment => segment.toFixed(2));
+    button.textContent = currentLocation;
   };
   const handleGeoError = err => {
     console.error(err);

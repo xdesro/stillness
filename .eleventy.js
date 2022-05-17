@@ -1,6 +1,6 @@
 const { find } = require("geo-tz");
 
-const GPS_DEFAULT = [40.76852, -73.95591];
+const GPS_DEFAULT = [40.76, -73.95];
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,css}": "" });
