@@ -203,9 +203,14 @@ button {
   z-index: 2;
   right: 1.5rem;
   bottom: 4.5rem;
+  display: block;
+  overflow: hidden;
+  max-width: calc(100vw - 3rem);
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  white-space: nowrap;
   text-transform: lowercase;
+  text-overflow: ellipsis;
   color: inherit;
   border: 1px solid currentColor;
   background-color: transparent;

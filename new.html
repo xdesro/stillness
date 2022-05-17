@@ -21,7 +21,7 @@ layout: base.html
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     currentLocation =  [latitude, longitude];
-    button.textContent = currentLocation
+    button.textContent = currentLocation.map(segment => segment.toFixed(4))
   };
   const handleGeoError = err => {
     console.error(err);
