@@ -201,8 +201,8 @@ button {
   font-size: 1.25rem;
   position: absolute;
   z-index: 2;
-  bottom: 1.5rem;
-  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 4.5rem;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   text-transform: lowercase;
@@ -219,8 +219,7 @@ button:active {
 }
 
 form > button {
-  right: 1.5rem;
-  left: unset;
+  bottom: 1.5rem;
 }
 
 .secret {
