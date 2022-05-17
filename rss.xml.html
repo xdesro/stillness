@@ -15,7 +15,7 @@ permalink: rss.xml
 		</image>
         {% for post in collections.posts | reverse %}
             <item>
-                <title>{{ post.date | jsDate }}</title>
+                <title>{{ post.date | timezonedDate(post.data.gps) }}</title>
                 <description><![CDATA[{{ post.templateContent | nl2br | safe }}]]></description>
                 <pubDate>{{ post.date.toISOString() }}</pubDate>
                 <guid isPermaLink="false">{{ post.date.toISOString() }}</guid>

@@ -6,9 +6,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,}": "" });
   eleventyConfig.addPassthroughCopy({ meta: "meta" });
 
-  eleventyConfig.addFilter("jsDate", (str) => {
-    return new Date(str);
-  });
   eleventyConfig.addFilter("timezonedDate", (str, coords) => {
     const options = {
       weekday: "long",
@@ -29,6 +26,9 @@ module.exports = function (eleventyConfig) {
     });
     return date;
   });
+  eleventyConfig.addFilter('encodeURIComponent', str => {
+    return encodeURIComponent(str);
+  })
   eleventyConfig.addFilter("urlDate", (str) => {
     const date = new Date(str);
     const year = date.getFullYear();

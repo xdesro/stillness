@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stillness.Digital | {{ title or 'A Place To Rest' }}</title>
+    <title>Stillness.Digital | {{ title or "A Place To Rest" }}</title>
     <meta
       name="description"
       content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
     />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -31,24 +30,27 @@
     <link rel="mask-icon" href="/meta/safari-pinned-tab.svg" color="#030303" />
     <meta name="msapplication-TileColor" content="#efefef" />
     <meta name="theme-color" content="#ffffff" />
-
-    <meta name="twitter:title" content="Stillness.Digital | A Place To Rest" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@xdesro" />
+    <meta name="twitter:title" content="Stillness.Digital | {{ title or "A Place To Rest" }}" />
     <meta
       name="twitter:image"
-      content="https://stillness.digital/meta/og.png"
+      content="{{ og or "https://stillness.digital/meta/og.png" }}"
     />
     <meta
       name="twitter:description"
       content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
     />
 
-    <meta property="og:title" content="Stillness.Digital | A Place To Rest" />
-    <meta property="og:image" content="https://stillness.digital/meta/og.png" />
+    <meta property="og:title" content="Stillness.Digital | {{ title or "A Place To Rest" }}" />
+    <meta property="og:image" content="{{ og or "https://stillness.digital/meta/og.png" }}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
+    {% if og %}
+      <meta property="og:image:type" content="image/png" />
+    {% else %}
+      <meta property="og:image:type" content="image/jpg" />
+    {% endif %}
 
     <style>
       @font-face {
@@ -162,7 +164,7 @@
       article {
         font-family: "DM Mono";
         font-size: 0.85rem;
-        max-width: 45ch;
+        max-width: 50ch;
         margin-bottom: 3rem;
         padding-inline: 1rem;
         text-align: justify;

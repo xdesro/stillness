@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Ninna";
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("/ninna.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "DM Mono";
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("/dm-mono.woff2");
+      }
+
+      @font-face {
+        font-family: "DM Mono";
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+        src: url("/dm-mono-italic.woff2");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: hsl(0, 0%, 1%);
+        border: 1.5rem solid hsl(0, 0%, 96%);
+        background-color: hsl(0, 0%, 96%);
+        background-image: url("/gradient.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      main {
+        position: absolute;
+        bottom: 4rem;
+        left: 4rem;
+      }
+      h1 {
+        font-family: "Ninna";
+        font-size: clamp(2.3rem, 9vw, 3.8rem);
+        font-weight: normal;
+        font-feature-settings: "ss13" on, "ss07" on;
+        line-height: 1.1;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        color: hsl(0, 0%, 96%);
+      }
+
+      h2 {
+        font-family: "DM Mono";
+        font-size: 1rem;
+        font-weight: normal;
+        text-transform: lowercase;
+      }
+
+      pre {
+        font-family: "DM Mono";
+        font-size: 1rem;
+        max-width: 50ch;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <main>{{ content | safe }}</main>
+  </body>
+</html>
