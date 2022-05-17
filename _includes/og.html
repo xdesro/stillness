@@ -35,10 +35,10 @@
       }
 
       body {
+        position: relative;
         min-height: 100vh;
         margin: 0;
         color: hsl(0, 0%, 1%);
-        border: 1.5rem solid hsl(0, 0%, 96%);
         background-color: hsl(0, 0%, 96%);
         background-image: url("/gradient.jpg");
         background-attachment: fixed;
@@ -47,9 +47,20 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+      body:before {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: "";
+        border: 1.5rem solid hsl(0, 0%, 96%);
+      }
       main {
         position: absolute;
-        bottom: 4rem;
+        top: calc(50% - 5rem);
         left: 4rem;
       }
       h1 {
@@ -68,16 +79,20 @@
         font-family: "DM Mono";
         font-size: 1.5rem;
         font-weight: normal;
+        margin-bottom: 3rem;
         text-transform: lowercase;
       }
 
       pre {
         font-family: "DM Mono";
-        font-size: 1rem;
+        font-size: 1.25rem;
         max-width: 50ch;
+        height: 10rem;
         margin-top: 0;
         margin-bottom: 2rem;
         white-space: pre-line;
+        text-overflow: ellipsis;
+        mask-image: linear-gradient(hsl(0, 0%, 0%), transparent);
       }
     </style>
   </head>
