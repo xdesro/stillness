@@ -3,7 +3,7 @@ const { find } = require("geo-tz");
 const GPS_DEFAULT = [40.76852, -73.95591];
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,}": "" });
+  eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,css}": "" });
   eleventyConfig.addPassthroughCopy({ meta: "meta" });
 
   eleventyConfig.addFilter("timezonedDate", (str, coords) => {
