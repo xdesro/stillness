@@ -1,6 +1,7 @@
 ---
 layout: 'base.html'
 eleventyComputed:
+    description: "{{ content | striptags }}"
     title: "{{ page.date | timezonedDate(page.gps) }}"
     date: "{{ page.date | urlDate | slugify }}"
     og: "https://screenshot.henry.codes/{{ ('https://stillness.digital/opengraph/posts/' + date) | encodeURIComponent }}/opengraph"

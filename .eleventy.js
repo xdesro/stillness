@@ -40,6 +40,9 @@ module.exports = function (eleventyConfig) {
       "0"
     )}`;
   });
+  eleventyConfig.addFilter("contentToDescription", str => {
+    return str.replace(/\r|\n|\r\n/g, ' ❡ ')
+  })
   return {
     htmlTemplateEngine: "njk",
   };

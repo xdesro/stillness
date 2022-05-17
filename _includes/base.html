@@ -7,7 +7,7 @@
     <title>Stillness.Digital | {{ title or "A Place To Rest" }}</title>
     <meta
       name="description"
-      content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
+      content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}"
     />
     <link
       rel="apple-touch-icon"
@@ -37,10 +37,21 @@
       name="twitter:image"
       content="{{ og or "https://stillness.digital/meta/og.png" }}"
     />
-    <meta
-      name="twitter:description"
-      content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
-    />
+    {% if 'post' in page.url %}
+      {% for post in collections.posts | reverse %}
+        {% if post.url == page.url %}
+          <meta
+            name="twitter:description"
+            content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}"
+          />
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <meta
+        name="twitter:description"
+        content="A website built just for you, which expects nothing of your time. Breathe freely, old friend."
+      />
+    {% endif %}
 
     <meta property="og:title" content="Stillness.Digital | {{ title or "A Place To Rest" }}" />
     <meta property="og:image" content="{{ og or "https://stillness.digital/meta/og.png" }}" />
@@ -287,10 +298,6 @@
 
   <body>
     {{ content | safe }}
-    <footer class="secret">
-      my, you are certainly curious, eh! what a delight it must be to know you.
-      i feel you are a dear friend to me already.
-    </footer>
     <script>
       console.log(
         "❧ hey. i’m henry (https://henry.codes) — idk why I made this, just wanted to put something nice and quiet out there on the web today.\n\n",
