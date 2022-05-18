@@ -12,7 +12,7 @@ layout: base.html
 
 <script>
   const form = document.querySelector("#form");
-  const button = document.querySelector('#getgeo')
+  const button = document.querySelector("#getgeo");
   let currentLocation = null;
   let gps = false;
 
@@ -20,13 +20,15 @@ layout: base.html
     gps = true;
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    currentLocation =  [latitude, longitude].map(segment => segment.toFixed(2));
+    currentLocation = [latitude, longitude].map((segment) =>
+      segment.toFixed(2)
+    );
     button.textContent = currentLocation;
   };
-  const handleGeoError = err => {
+  const handleGeoError = (err) => {
     console.error(err);
-    button.textContent = `error`
-  }
+    button.textContent = `error`;
+  };
 
   button.addEventListener("click", (e) => {
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
@@ -39,7 +41,7 @@ layout: base.html
 
     const template = `---
 date: ${date.toISOString()}
-${(gps && `gps: [${currentLocation}]`) || ''}
+${(gps && `gps: [${currentLocation}]`) || ""}
 ---
 ${text}`;
 
