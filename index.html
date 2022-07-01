@@ -9,7 +9,7 @@ layout: base.html
         <span>{{ year }}</span>
         <ol>
             
-            {% for post in posts %}
+            {% for post in posts | reverse %}
             <li>
                 <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | shortDate }}</time></a>
             </li> 
