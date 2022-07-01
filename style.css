@@ -118,10 +118,14 @@ nav {
   font-family: "DM Mono";
   font-size: 0.85rem;
 }
+nav > span {
+  display: block;
+  margin-bottom: 1rem;
+}
 nav > ol {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2rem;
 }
 nav li {
   margin-bottom: 0.5em;

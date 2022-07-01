@@ -5,13 +5,23 @@ layout: base.html
 <aside aria-hidden="true">&</aside>
 <main class="home">
     <nav>
+        {% for year, posts  in collections.postsByYear | reverse %}
+        <span>{{ year }}</span>
         <ol>
-            {% for post in collections.posts | reverse %}
-                <li>
-                    <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | urlDate | replace(' ', '-') }}</time></a>
-                </li>
+            
+            {% for post in posts %}
+            <li>
+                <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | shortDate }}</time></a>
+            </li> 
             {% endfor %}
+            {# {% for post in collections.postsByYear[year]%}
+            
+                    <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | shortDate }}</time></a>
+            {% endfor %} #}
         </ol>
+        {% endfor %}
+        <span><a href="#">back to top</a></span>
+
     </nav>
     <div>
     {% for post in collections.posts | reverse %}
