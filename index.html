@@ -4,14 +4,25 @@ layout: base.html
 <h1>Welcome, <em>traveler.</em></h1>
 <aside aria-hidden="true">&</aside>
 <main>
+    <nav>
+        <ol>
+            {% for post in collections.posts | reverse %}
+                <li>
+                    <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | urlDate | replace(' ', '-') }}</time></a>
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+    <div>
     {% for post in collections.posts | reverse %}
-        <article>
+        <article id="{{ post.date | urlDate | slugify }}">
             <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
             <pre>{{ post.templateContent }}</pre>
             <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
             {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
         </article>
     {% endfor %}
+    </div>
 </main>
 <footer class="secret">
     my, you are certainly curious, eh! what a delight it must be to know you.
