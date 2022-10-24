@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stillness.Digital | {{ title or "A Place To Rest" }}</title>
+    <meta name="generator" content="Eleventy" />
     <meta
       name="description"
       content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}"
