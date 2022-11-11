@@ -6,6 +6,7 @@ const GPS_DEFAULT = [40.76, -73.95];
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,css}": "" });
   eleventyConfig.addPassthroughCopy({ meta: "meta" });
+  eleventyConfig.addPassthroughCopy({ 'og/images': "img" });
 
   eleventyConfig.addFilter("timezonedDate", (str, coords) => {
     const options = {

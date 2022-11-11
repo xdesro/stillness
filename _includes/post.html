@@ -4,7 +4,9 @@ eleventyComputed:
     description: "{{ content | striptags }}"
     title: "{{ page.date | timezonedDate(page.gps) }}"
     date: "{{ page.date | urlDate | slugify }}"
-    og: "https://screenshot.henry.codes/{{ ('https://stillness.digital/opengraph/posts/' + date) | encodeURIComponent }}/opengraph"
+    generatedOgUrl: "https://screenshot.henry.codes/{{ ('https://stillness.digital/opengraph/posts/' + date) | encodeURIComponent }}/opengraph"
+    manualOgUrl: "https://stillness.digital/img/{{ page.date | urlDate | slugify }}.png"
+    og: "{% if manualOpengraph %}{{ manualOgUrl }}{% else %}{{ generatedOgUrl }}{% endif %}"
 ---
 <main>
     <article>
