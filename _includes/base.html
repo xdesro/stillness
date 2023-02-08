@@ -45,8 +45,10 @@
         {% if post.url == page.url %}
           <meta
             name="twitter:description"
-            content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}"
+            
           />
+    <meta property="og:description" content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}">
+
         {% endif %}
       {% endfor %}
     {% else %}
