@@ -46,7 +46,7 @@ ${(gps && `gps: [${currentLocation}]`) || ""}
 ${text}`;
 
     const message = `📄 - Create new post: ${date}`;
-    const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=posts%2F${date}.html&value=${encodeURIComponent(
+    const ghQueryUrl = `https://github.com/xdesro/stillness/new/main/posts?filename=${date}.html&value=${encodeURIComponent(
       template
     )}&message=${encodeURIComponent(message)}`;
     window.location.href = ghQueryUrl;
