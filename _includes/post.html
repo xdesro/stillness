@@ -9,9 +9,9 @@ eleventyComputed:
     og: "{% if manualOpengraph %}{{ manualOgUrl }}{% else %}{{ generatedOgUrl }}{% endif %}"
 ---
 <main>
-    <article>
+    <article {% if content.length  > 1100 %}class="extended"{% endif %}>
         <time>{{ page.date | timezonedDate(page.gps) }}</time>
         <pre>{{ content | safe }}</pre>
-        <a href="/">← return</a>
+        <a href="/">← go home</a>
     </article>
 </main>
