@@ -42,7 +42,6 @@ body {
   padding-bottom: 8rem;
   animation: drift 30s linear infinite;
   color: #010101;
-  background-color: #f8f7f6;
   background-color: hsl(30, 12%, 97%);
 
   -webkit-font-smoothing: antialiased;
@@ -155,7 +154,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: hsl(42, 16%, 41%);
+  color: hsl(74, 16%, 39%);
 }
 
 nav a:hover,
