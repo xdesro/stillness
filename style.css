@@ -42,6 +42,7 @@ body {
   padding-bottom: 8rem;
   animation: drift 30s linear infinite;
   color: #010101;
+  background-color: #f8f7f6;
   background-color: hsl(30, 12%, 97%);
 
   -webkit-font-smoothing: antialiased;
@@ -95,7 +96,7 @@ h1:first-letter {
 h1 em {
   font-style: normal;
   font-feature-settings: "ss07", "ss12";
-  color: hsl(87, 17%, 60%);
+  color: hsl(87, 16%, 41%);
 }
 
 a {
@@ -120,7 +121,6 @@ aside {
   font-size: 4rem;
   font-feature-settings: "ss14";
   color: hsl(87, 17%, 60%);
-
 }
 
 main {
@@ -153,13 +153,13 @@ nav li {
 
 nav a {
   text-decoration: none;
-  opacity: 0.5;
+  color: hsl(42, 16%, 41%);
 }
 
 nav a:hover,
 nav a:active {
   text-decoration: underline;
-  opacity: 1;
+  color: #010101;
 }
 
 nav time {
