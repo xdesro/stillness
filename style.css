@@ -96,7 +96,8 @@ h1:first-letter {
 h1 em {
   font-style: normal;
   font-feature-settings: "ss07", "ss12";
-  color: hsl(87, 16%, 41%);
+  color: hsl(87, 17%, 60%);
+
 }
 
 a {
@@ -121,6 +122,7 @@ aside {
   font-size: 4rem;
   font-feature-settings: "ss14";
   color: hsl(87, 17%, 60%);
+
 }
 
 main {
