@@ -137,6 +137,7 @@ nav {
   overflow: scroll;
   align-self: start;
   height: 100vh;
+  margin-top: -5rem;
   padding-top: 5rem;
 }
 
