@@ -132,9 +132,16 @@ nav {
   font-family: "GT America Mono";
   font-size: 0.85rem;
   position: sticky;
-  top: 5rem;
+  top: 0;
   display: none;
+  overflow: scroll;
   align-self: start;
+  height: 100vh;
+  padding-top: 5rem;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
 }
 
 nav>span {
@@ -265,6 +272,7 @@ pre~address:before {
 
   .extended pre {
     gap: 2rem;
+
     columns: 2;
   }
 }
