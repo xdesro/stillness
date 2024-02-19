@@ -139,6 +139,7 @@ nav {
   height: 100vh;
   margin-top: -5rem;
   padding-top: 5rem;
+  scrollbar-width: none;
 }
 
 nav::-webkit-scrollbar {
