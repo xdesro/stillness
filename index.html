@@ -27,7 +27,7 @@ layout: base.html
     {% for post in collections.posts | reverse %}
         <article id="{{ post.date | urlDate | slugify }}">
             <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
-            <pre>{{ post.templateContent }}</pre>
+            <pre>{{ post.templateContent | safe }}</pre>
             <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
             {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
         </article>
