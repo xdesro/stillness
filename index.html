@@ -10,9 +10,11 @@ layout: base.html
         <ol>
             
             {% for post in posts | reverse %}
-            <li>
-                <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | shortDate }}</time></a>
-            </li> 
+                {% if not post.data.draft %}
+                <li>
+                    <a href="#{{ post.date | urlDate | slugify }}"><time>{{ post.date | shortDate }}</time></a>
+                </li> 
+                {% endif %}
             {% endfor %}
             {# {% for post in collections.postsByYear[year]%}
             
@@ -25,12 +27,14 @@ layout: base.html
     </nav>
     <div>
     {% for post in collections.posts | reverse %}
-        <article id="{{ post.date | urlDate | slugify }}">
-            <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
-            <pre>{{ post.templateContent | safe }}</pre>
-            <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
-            {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
-        </article>
+        {% if not post.data.draft %}
+            <article id="{{ post.date | urlDate | slugify }}">
+                <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
+                <pre>{{ post.templateContent | safe }}</pre>
+                <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
+                {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
+            </article>
+        {% endif %}
     {% endfor %}
     </div>
 </main>

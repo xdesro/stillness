@@ -6,7 +6,7 @@ const GPS_DEFAULT = [40.76, -73.95];
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "*.{woff2,jpg,css}": "" });
   eleventyConfig.addPassthroughCopy({ meta: "meta" });
-  eleventyConfig.addPassthroughCopy({ 'og/images': "img" });
+  eleventyConfig.addPassthroughCopy({ "og/images": "img" });
 
   eleventyConfig.addFilter("timezonedDate", (str, coords) => {
     const options = {
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
 
     return `${year} ${`${month}`.padStart(2, "0")} ${`${day}`.padStart(
       2,
-      "0"
+      "0",
     )}`;
   });
 
@@ -58,14 +58,14 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("postsByYear", (collectionApi) =>
-  // Use lodash methods to sort posts by year
-  // Turns { year: [posts] } format into [ year, [posts] ] ]
+    // Use lodash methods to sort posts by year
+    // Turns { year: [posts] } format into [ year, [posts] ] ]
     chain(collectionApi.getFilteredByTag("posts"))
       .groupBy((post) => {
         return new Date(post.date).getFullYear();
       })
       .toPairs()
-      .value()
+      .value(),
   );
 
   return {
