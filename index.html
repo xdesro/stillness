@@ -28,9 +28,12 @@ layout: base.html
     <div>
     {% for post in collections.posts | reverse %}
         {% if not post.data.draft %}
-            <article id="{{ post.date | urlDate | slugify }}">
+            <article id="{{ post.date | urlDate | slugify }}" {% if post.data.author %}class="guest-post{% if post.data.authorClass %} guest-post--{{ post.data.authorClass }}{% endif %}"{% endif %}>
                 <time>{{ post.date | timezonedDate(post.data.gps) }}</time>
                 <pre>{{ post.templateContent | safe }}</pre>
+                {% if post.data.author %}
+                <cite>—<a href="{{ post.data.authorUrl }}">{{ post.data.author }}</a></cite>
+                {% endif %}
                 <a href="/posts/{{ post.date | urlDate | slugify }}/" class="permalink">permalink</a>
                 {% if post.data.gps %}<address>{{ post.data.gps }}</address>{% endif %}
             </article>
