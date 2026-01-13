@@ -8,7 +8,7 @@
     <meta name="generator" content="Eleventy" />
     <meta
       name="description"
-      content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}"
+      content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags | contentToDescription | truncate(160, true, "...”") }}"
     />
     <link
       rel="apple-touch-icon"
@@ -47,7 +47,7 @@
             name="twitter:description"
             
           />
-    <meta property="og:description" content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags(true) | contentToDescription | truncate(160, true, "...”") }}">
+    <meta property="og:description" content="{{ "Stillness is a blog. Have a look: “" + post.templateContent | striptags | contentToDescription | truncate(160, true, "...”") }}">
 
         {% endif %}
       {% endfor %}

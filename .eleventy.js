@@ -1,5 +1,6 @@
 const { find } = require("geo-tz");
-const { chain, groupBy, toPairs, value } = require("lodash");
+const { chain } = require("lodash");
+const striptags = require('striptags')
 
 const GPS_DEFAULT = [40.76, -73.95];
 
@@ -48,6 +49,8 @@ module.exports = function (eleventyConfig) {
       day: "numeric",
     });
   });
+
+  eleventyConfig.addFilter('striptags', striptags)
 
   eleventyConfig.addFilter("encodeURIComponent", (str) => {
     return encodeURIComponent(str);
